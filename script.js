@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Change cart buttons to order buttons
+    // Get all order buttons
     const orderButtons = document.querySelectorAll('.order-btn');
     
+    // Add click event to each order button
     orderButtons.forEach(button => {
         button.addEventListener('click', function() {
+            // Get product details
             const productId = this.getAttribute('data-id');
             const productPrice = parseInt(this.getAttribute('data-price'));
             const productName = this.closest('.product-info').querySelector('h3').textContent;
@@ -19,17 +21,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 color = document.getElementById('hoodie-color').value;
             }
             
-            // Create email with order details
-            const subject = `Ny beställning: ${productName}`;
-            const body = `
-                Produkt: ${productName}
-                Pris: ${productPrice} SEK
-                Storlek: ${size.toUpperCase()}
-                Färg: ${color}
-            `;
+            // Prepare email content
+            const subject = encodeURIComponent(`Ny beställning: ${productName}`);
+            const body = encodeURIComponent(
+                `Produkt: ${productName}\nPris: ${productPrice} SEK\nStorlek: ${size.toUpperCase()}\nFärg: ${color}`
+            );
             
             // Create mailto link
-            const mailtoLink = `mailto:simplifymenu@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            const mailtoLink = `mailto:simplifymenu@gmail.com?subject=${subject}&body=${body}`;
             
             // Open email client
             window.location.href = mailtoLink;
@@ -39,20 +38,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Show notification
+    // Show notification function
     function showNotification(message) {
+        // Create notification element
         const notification = document.createElement('div');
         notification.classList.add('notification');
         notification.textContent = message;
         
+        // Add to document
         document.body.appendChild(notification);
         
+        // Show notification with animation
         setTimeout(() => {
             notification.classList.add('show');
         }, 10);
         
+        // Hide and remove notification after delay
         setTimeout(() => {
             notification.classList.remove('show');
+            
+            // Remove from DOM after animation completes
             setTimeout(() => {
                 document.body.removeChild(notification);
             }, 300);
