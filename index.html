@@ -8,7 +8,8 @@
     <script src="script.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -16,7 +17,11 @@
             <h1>Original Supporter Merch</h1>
             <nav>
                 <ul>
-                    <li><a href="#cart" id="cart-icon">Cart <span id="cart-count">0</span></a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#pricing">Membership</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#cart" id="cart-icon"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -25,7 +30,7 @@
     <section class="hero">
         <div class="container">
             <h2>Endast för äkta supporters</h2>
-            <p>Visa ditt stöd</p>
+            <p>Visa ditt stöd med vår exklusiva kollektion, endast tillgänglig för de sanna supportrarna</p>
             <a href="#products" class="btn">Shop Now</a>
         </div>
     </section>
@@ -41,7 +46,7 @@
                     <div class="product-info">
                         <h3>Original Supporter Tshirt</h3>
                         <p>Endast för dig med årskort eller som har ett medlemskap av någon supportergrupp</p>
-                        <p class="price">$399</p>
+                        <p class="price">399 SEK <img src="https://flagcdn.com/w20/se.png" alt="Swedish flag" class="currency-flag"></p>
                         <div class="product-options">
                             <div class="size-selector">
                                 <label for="tshirt-size">Size:</label>
@@ -71,8 +76,8 @@
                     </div>
                     <div class="product-info">
                         <h3>Original Supporter Hoodie</h3>
-                        <p>Endast för dig med årskort eller medlmskap</p>
-                        <p class="price">$599</p>
+                        <p>Endast för dig med årskort eller medlemskap</p>
+                        <p class="price">599 SEK <img src="https://flagcdn.com/w20/se.png" alt="Swedish flag" class="currency-flag"></p>
                         <div class="product-options">
                             <div class="size-selector">
                                 <label for="hoodie-size">Size:</label>
@@ -99,11 +104,43 @@
         </div>
     </section>
 
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <h2>Membership Options</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <i class="fas fa-calendar-alt pricing-icon"></i>
+                    <h3 class="pricing-title">Flexible Payments</h3>
+                    <p class="pricing-subtitle">Pay as you go, month by month</p>
+                    <div class="pricing-price">
+                        <span class="currency">SEK</span>1,900 <img src="https://flagcdn.com/w20/se.png" alt="Swedish flag">
+                    </div>
+                    <p class="pricing-period">/ month</p>
+                    <button class="btn">Select Plan</button>
+                    <p class="pricing-note">Everything included</p>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="best-value-badge">Best Value</div>
+                    <i class="fas fa-calendar-check pricing-icon"></i>
+                    <h3 class="pricing-title">Annual Subscription</h3>
+                    <p class="pricing-subtitle">Save with our yearly plan</p>
+                    <div class="pricing-price">
+                        <span class="currency">SEK</span>19,000 <img src="https://flagcdn.com/w20/se.png" alt="Swedish flag">
+                    </div>
+                    <p class="pricing-period">/ year</p>
+                    <button class="btn">Select Plan</button>
+                    <p class="pricing-note">Get 2 months free!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="about" class="about">
         <div class="container">
-            <h2>Om </h2>
-            <p>Är du inte årskortinnehavare eller medlem i npgon supportergrupp, så kan du inte handla här. </p>
-            <p>Leverans av din beställnig sker alltid på närmast kommande hemmamatch, utan för södra läktaren. Om du inte kan visa att du har årskort eller medlemskap, då får du inga varor. </p>
+            <h2>Om Oss</h2>
+            <p>Är du inte årskortinnehavare eller medlem i någon supportergrupp, så kan du inte handla här.</p>
+            <p>Leverans av din beställning sker alltid på närmast kommande hemmamatch, utanför södra läktaren. Om du inte kan visa att du har årskort eller medlemskap, då får du inga varor.</p>
         </div>
     </section>
 
@@ -134,7 +171,7 @@
             <h2>Your Cart</h2>
             <div id="cart-items"></div>
             <div id="cart-total">
-                <p>Total: $<span id="total-amount">0.00</span></p>
+                <p>Total: <span id="total-amount">0</span> SEK <img src="https://flagcdn.com/w20/se.png" alt="Swedish flag" class="currency-flag"></p>
             </div>
             <button id="checkout-btn" class="btn">Checkout</button>
         </div>
@@ -144,11 +181,9 @@
         <div class="container">
             <p>&copy; 2025 Original Supporter. All rights reserved.</p>
             <div class="social-links">
-                <a href="#" class="social-link">Instagram</a>
-                <a href="#" class="social-link">Twitter</a>
-                <a href="#" class="social-link">Facebook</a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
             </div>
         </div>
     </footer>
-</body>
-</html>
