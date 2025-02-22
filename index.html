@@ -1,129 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Only for real supporters</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Original Supporter Merch</h1>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <h2>Endast för äkta supporters</h2>
-            <p>Visa ditt stöd med vår exklusiva kollektion, endast tillgänglig för de sanna supportrarna</p>
-            <a href="#products" class="btn">Shop Now</a>
-        </div>
-    </section>
-
-    <section id="products" class="products">
-        <div class="container">
-            <h2>Our Products</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="aik.jpg" alt="Premium T-Shirt">
-                    </div>
-                    <div class="product-info">
-                        <h3>Original Supporter Tshirt</h3>
-                        <p>Endast för dig med årskort eller som har ett medlemskap av någon supportergrupp</p>
-                        <p class="price">399 SEK <img src="https://flagcdn.com/w20/se.png" alt="Swedish flag" class="currency-flag"></p>
-                        <div class="product-options">
-                            <div class="size-selector">
-                                <label for="tshirt-size">Size:</label>
-                                <select id="tshirt-size">
-                                    <option value="s">Small</option>
-                                    <option value="m" selected>Medium</option>
-                                    <option value="l">Large</option>
-                                    <option value="xl">X-Large</option>
-                                </select>
-                            </div>
-                            <div class="color-selector">
-                                <label for="tshirt-color">Color:</label>
-                                <select id="tshirt-color">
-                                    <option value="black">Black</option>
-                                    <option value="gray">Gray</option>
-                                </select>
-                            </div>
-                        </div>
-                        <button class="btn add-to-cart" data-id="tshirt" data-price="399">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="aik.jpg" alt="Classic Hoodie">
-                    </div>
-                    <div class="product-info">
-                        <h3>Original Supporter Hoodie</h3>
-                        <p>Endast för dig med årskort eller medlemskap</p>
-                        <p class="price">599 SEK <img src="https://flagcdn.com/w20/se.png" alt="Swedish flag" class="currency-flag"></p>
-                        <div class="product-options">
-                            <div class="size-selector">
-                                <label for="hoodie-size">Size:</label>
-                                <select id="hoodie-size">
-                                    <option value="s">Small</option>
-                                    <option value="m" selected>Medium</option>
-                                    <option value="l">Large</option>
-                                    <option value="xl">X-Large</option>
-                                </select>
-                            </div>
-                            <div class="color-selector">
-                                <label for="hoodie-color">Color:</label>
-                                <select id="hoodie-color">
-                                    <option value="black">Black</option>
-                                    <option value="gray">Gray</option>
-                                </select>
-                            </div>
-                        </div>
-                        <button class="btn add-to-cart" data-id="hoodie" data-price="599">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2>Om Oss</h2>
-            <p>Är du inte årskortinnehavare eller medlem i någon supportergrupp, så kan du inte handla här.</p>
-            <p>Leverans av din beställning sker alltid på närmast kommande hemmamatch, utanför södra läktaren. Om du inte kan visa att du har årskort eller medlemskap, då får du inga varor.</p>
-        </div>
-    </section>
-
-
-
-    <div id="cart-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Your Cart</h2>
-            <div id="cart-items"></div>
-            <div id="cart-total">
-                <p>Total: <span id="total-amount">0</span> SEK <img src="https://flagcdn.com/w20/se.png" alt="Swedish flag" class="currency-flag"></p>
-            </div>
-            <button id="checkout-btn" class="btn">Checkout</button>
-        </div>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Original Supporter. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-            </div>
-        </div>
-    </footer>
+document.addEventListener('DOMContentLoaded', function() {
+    // Change cart buttons to order buttons
+    const orderButtons = document.querySelectorAll('.order-btn');
+    
+    orderButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = this.getAttribute('data-id');
+            const productPrice = parseInt(this.getAttribute('data-price'));
+            const productName = this.closest('.product-info').querySelector('h3').textContent;
+            
+            // Get selected options
+            let size, color;
+            
+            if (productId === 'tshirt') {
+                size = document.getElementById('tshirt-size').value;
+                color = document.getElementById('tshirt-color').value;
+            } else if (productId === 'hoodie') {
+                size = document.getElementById('hoodie-size').value;
+                color = document.getElementById('hoodie-color').value;
+            }
+            
+            // Create email with order details
+            const subject = `Ny beställning: ${productName}`;
+            const body = `
+                Produkt: ${productName}
+                Pris: ${productPrice} SEK
+                Storlek: ${size.toUpperCase()}
+                Färg: ${color}
+            `;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:simplifymenu@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show notification
+            showNotification(`Beställning för ${productName} skapas!`);
+        });
+    });
+    
+    // Show notification
+    function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.classList.add('notification');
+        notification.textContent = message;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.classList.add('show');
+        }, 10);
+        
+        setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 300);
+        }, 2000);
+    }
+});
