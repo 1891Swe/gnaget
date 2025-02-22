@@ -1,12 +1,15 @@
-/* Update the product grid to keep items side by side on mobile */
+/* We'll take a more careful approach to ensure the layout doesn't break */
+
+/* Keep the original grid setup but with some adjustments */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Change to always show 2 columns */
-    gap: 20px; /* Reduced gap from 40px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; /* Reduced from 40px */
     max-width: 1000px;
     margin: 0 auto;
 }
 
+/* Make product cards slightly smaller but maintain structure */
 .product-card {
     border-radius: 12px;
     overflow: hidden;
@@ -14,85 +17,110 @@
     transition: all 0.3s ease;
     background-color: #111111;
     margin: 0 auto;
-    width: 100%; /* Make cards take full width of their grid cell */
+    max-width: 350px; /* Reduced from 400px */
+    width: 100%;
     border: 1px solid #ffde00;
 }
 
-/* Make product images smaller on all devices */
+/* Make product images a bit smaller */
 .product-image {
-    height: 250px; /* Reduced from 350px */
+    height: 280px; /* Reduced from 350px */
     overflow: hidden;
     border-bottom: 1px solid #ffde00;
 }
 
-/* Adjust product info padding to be more compact */
-.product-info {
-    padding: 15px; /* Reduced from 25px */
-    text-align: center;
-}
-
-.product-info h3 {
-    margin-bottom: 10px; /* Reduced from 14px */
-    font-size: 1.3rem; /* Reduced from 1.5rem */
-}
-
-.price {
-    font-size: 1.3rem; /* Reduced from 1.5rem */
-    margin-bottom: 15px !important; /* Reduced from 25px */
-}
-
-/* Make the product options more compact */
-.product-options {
-    margin: 15px 0; /* Reduced from 25px */
-    gap: 10px; /* Reduced from 20px */
-}
-
-select {
-    padding: 8px; /* Reduced from 12px */
-}
-
-/* Specific mobile adjustments */
+/* Tweak mobile specific styles */
 @media (max-width: 768px) {
-    .hero {
-        padding: 40px 0; /* Reduced from 60px */
-    }
-    
-    .hero h2 {
-        font-size: 1.8rem; /* Reduced from 2rem */
-    }
-    
-    .products, .about {
-        padding: 40px 0; /* Reduced from 80px */
-    }
-    
-    .products h2, .about h2 {
-        margin-bottom: 30px; /* Reduced from 60px/40px */
-        font-size: 2rem; /* Reduced from 2.5rem */
-    }
-}
-
-/* Extra small devices */
-@media (max-width: 480px) {
+    /* Force two columns for mobile view */
     .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* Keep 2 columns even on very small screens */
-        gap: 10px; /* Further reduce gap */
-        padding: 0 5px; /* Reduce side padding */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 10px;
+    }
+    
+    /* Make cards smaller on mobile */
+    .product-card {
+        max-width: 100%;
+    }
+    
+    /* Reduce image height further on mobile */
+    .product-image {
+        height: 200px;
+    }
+    
+    /* Make product info more compact */
+    .product-info {
+        padding: 15px;
     }
     
     .product-info h3 {
-        font-size: 1.1rem; /* Even smaller on tiny screens */
+        font-size: 1.2rem;
+        margin-bottom: 10px;
     }
     
-    .btn {
-        padding: 8px 16px; /* Smaller buttons */
-        font-size: 14px; /* Smaller text */
+    /* Adjust price display */
+    .price {
+        font-size: 1.2rem;
+        margin-bottom: 15px !important;
     }
     
+    /* Make select boxes more compact */
     .product-options {
-        grid-template-columns: 1fr; /* Stack options on very small screens */
+        margin: 15px 0;
+        gap: 10px;
     }
     
+    select {
+        padding: 8px;
+    }
+    
+    /* Make button smaller */
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Extra small devices - handle very small screens */
+@media (max-width: 480px) {
+    /* Keep a 2-column layout but make further adjustments */
+    .product-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    
+    /* Further adjustments for very small screens */
+    .product-image {
+        height: 150px;
+    }
+    
+    .product-info {
+        padding: 10px;
+    }
+    
+    .product-info h3 {
+        font-size: 1rem;
+    }
+    
+    /* Stack select boxes for better usability */
+    .product-options {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Adjust spacing */
     .product-info p {
-        margin-bottom: 10px; /* Tighter spacing */
+        margin-bottom: 8px;
+    }
+    
+    /* Smaller buttons */
+    .btn {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+    
+    /* Adjust section padding */
+    .products, .about {
+        padding: 30px 0;
     }
 }
