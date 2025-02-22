@@ -8,8 +8,8 @@
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f5f5f7;
+    color: #ffde00; /* Changed text color to yellow */
+    background-color: #000000; /* Changed background to black */
 }
 
 .container {
@@ -20,7 +20,7 @@ body {
 
 a {
     text-decoration: none;
-    color: #333;
+    color: #ffde00; /* Changed link color to yellow */
 }
 
 ul {
@@ -34,8 +34,8 @@ img {
 
 .btn {
     display: inline-block;
-    background-color: #972222;
-    color: #fff;
+    background-color: #ffde00; /* Changed button background to yellow */
+    color: #000000; /* Changed button text to black for contrast */
     padding: 12px 24px;
     border: none;
     border-radius: 6px;
@@ -43,31 +43,32 @@ img {
     font-size: 16px;
     font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(255,222,0,0.3); /* Changed shadow color */
 }
 
 .btn:hover {
-    background-color: #7a1c1c;
+    background-color: #ffd000; /* Slightly darker yellow on hover */
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 12px rgba(255,222,0,0.5); /* Changed shadow color */
 }
 
 /* Order button specific styles */
 .order-btn:hover {
-    background-color: #7a1c1c;
+    background-color: #ffd000; /* Changed to match yellow */
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 12px rgba(255,222,0,0.5); /* Changed shadow color */
 }
 
 /* Header */
 header {
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background-color: #000000; /* Changed to black */
+    box-shadow: 0 2px 10px rgba(255,222,0,0.3); /* Changed shadow color */
     position: sticky;
     top: 0;
     z-index: 1000;
     text-align: center;
     padding: 25px 0;
+    border-bottom: 2px solid #ffde00; /* Added yellow border */
 }
 
 header .container {
@@ -79,7 +80,7 @@ header .container {
 header h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #972222;
+    color: #ffde00; /* Changed to yellow */
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -100,25 +101,27 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #f5f5f7;
-    color: #972222;
+    background-color: #ffde00; /* Changed to yellow */
+    color: #000000; /* Changed to black for contrast */
 }
 
 /* Hero section */
 .hero {
-    background-color: #eee;
+    background-color: #111111; /* Slightly lighter than pure black */
     padding: 120px 0;
     text-align: center;
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('aik.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('aik.jpg');
     background-size: cover;
     background-position: center;
-    color: #fff;
+    color: #ffde00; /* Changed to yellow */
+    border-bottom: 2px solid #ffde00; /* Added yellow border */
 }
 
 .hero h2 {
     font-size: 3rem;
     margin-bottom: 20px;
     font-weight: 600;
+    color: #ffde00; /* Explicitly changed to yellow */
 }
 
 .hero p {
@@ -137,7 +140,7 @@ nav ul li a:hover {
 /* Products section */
 .products {
     padding: 80px 0;
-    background-color: #fff;
+    background-color: #000000; /* Changed to black */
     text-align: center;
 }
 
@@ -145,7 +148,7 @@ nav ul li a:hover {
     text-align: center;
     margin-bottom: 60px;
     font-size: 2.5rem;
-    color: #333;
+    color: #ffde00; /* Changed to yellow */
     position: relative;
 }
 
@@ -154,7 +157,7 @@ nav ul li a:hover {
     display: block;
     width: 60px;
     height: 4px;
-    background-color: #972222;
+    background-color: #ffde00; /* Changed to yellow */
     margin: 20px auto 0;
 }
 
@@ -169,22 +172,24 @@ nav ul li a:hover {
 .product-card {
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(255,222,0,0.2); /* Changed shadow color */
     transition: all 0.3s ease;
-    background-color: #fff;
+    background-color: #111111; /* Slightly lighter than black */
     margin: 0 auto;
     max-width: 400px;
     width: 100%;
+    border: 1px solid #ffde00; /* Added yellow border */
 }
 
 .product-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 12px 30px rgba(255,222,0,0.3); /* Changed shadow color */
 }
 
 .product-image {
     height: 350px;
     overflow: hidden;
+    border-bottom: 1px solid #ffde00; /* Added yellow border */
 }
 
 .product-image img {
@@ -207,11 +212,11 @@ nav ul li a:hover {
 .product-info h3 {
     margin-bottom: 14px;
     font-size: 1.5rem;
-    color: #333;
+    color: #ffde00; /* Changed to yellow */
 }
 
 .product-info p {
-    color: #666;
+    color: #cccccc; /* Lighter gray for better visibility on black */
     margin-bottom: 20px;
     line-height: 1.7;
 }
@@ -219,7 +224,7 @@ nav ul li a:hover {
 .price {
     font-weight: 700;
     font-size: 1.5rem;
-    color: #972222 !important;
+    color: #ffde00 !important; /* Changed to yellow */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -246,128 +251,31 @@ nav ul li a:hover {
 .size-selector label, .color-selector label {
     font-weight: 600;
     margin-bottom: 8px;
+    color: #ffde00; /* Changed to yellow */
 }
 
 select {
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 1px solid #ffde00; /* Changed to yellow */
     border-radius: 6px;
     margin-top: 5px;
     font-family: 'Montserrat', sans-serif;
-    background-color: #f8f8f8;
+    background-color: #111111; /* Slightly lighter than black */
+    color: #ffde00; /* Changed text to yellow */
     transition: border-color 0.3s;
 }
 
 select:focus {
     outline: none;
-    border-color: #972222;
-}
-
-/* Pricing cards */
-.pricing-section {
-    padding: 80px 0;
-    background-color: #f5f5f7;
-}
-
-.pricing-grid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.pricing-card {
-    background-color: white;
-    border-radius: 16px;
-    padding: 40px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.pricing-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.pricing-card.featured {
-    border: 2px solid #972222;
-}
-
-.best-value-badge {
-    position: absolute;
-    top: -15px;
-    background-color: #972222;
-    color: white;
-    font-weight: bold;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 14px;
-}
-
-.pricing-icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 20px;
-    color: #972222;
-}
-
-.pricing-title {
-    font-size: 1.7rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.pricing-subtitle {
-    color: #666;
-    margin-bottom: 30px;
-}
-
-.pricing-price {
-    font-size: 2.2rem;
-    font-weight: 800;
-    margin-bottom: 10px;
-    color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.pricing-price .currency {
-    font-size: 1.5rem;
-    margin-right: 5px;
-}
-
-.pricing-price img {
-    height: 24px;
-    margin-left: 10px;
-}
-
-.pricing-period {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 30px;
-}
-
-.pricing-note {
-    font-style: italic;
-    color: #888;
-    margin-top: 20px;
-    font-size: 0.9rem;
+    border-color: #ffd000; /* Slightly darker yellow */
 }
 
 /* About section */
 .about {
     padding: 80px 0;
-    background-color: #f8f8f8;
+    background-color: #111111; /* Slightly lighter than black */
     text-align: center;
+    border-top: 2px solid #ffde00; /* Added yellow border */
 }
 
 .about h2 {
@@ -375,6 +283,7 @@ select:focus {
     margin-bottom: 40px;
     font-size: 2.5rem;
     position: relative;
+    color: #ffde00; /* Changed to yellow */
 }
 
 .about h2:after {
@@ -382,7 +291,7 @@ select:focus {
     display: block;
     width: 60px;
     height: 4px;
-    background-color: #972222;
+    background-color: #ffde00; /* Changed to yellow */
     margin: 20px auto 0;
 }
 
@@ -393,64 +302,7 @@ select:focus {
     font-size: 1.1rem;
     line-height: 1.8;
     padding: 0 20px;
-}
-
-/* Contact section */
-.contact {
-    padding: 100px 0;
-    background-color: #fff;
-}
-
-.contact h2 {
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 2.5rem;
-    position: relative;
-}
-
-.contact h2:after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: #972222;
-    margin: 20px auto 0;
-}
-
-.contact form {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #f8f8f8;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-}
-
-.form-group {
-    margin-bottom: 25px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 14px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 16px;
-    transition: border-color 0.3s;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #972222;
+    color: #cccccc; /* Lighter gray for better visibility */
 }
 
 /* Notification */
@@ -458,11 +310,11 @@ select:focus {
     position: fixed;
     top: 20px;
     right: 20px;
-    background-color: #972222;
-    color: white;
+    background-color: #ffde00; /* Changed to yellow */
+    color: #000000; /* Changed to black for contrast */
     padding: 15px 25px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(255,222,0,0.5); /* Changed shadow color */
     z-index: 3000;
     transform: translateX(120%);
     opacity: 0;
@@ -476,9 +328,10 @@ select:focus {
 
 /* Footer */
 footer {
-    background-color: #222;
-    color: #fff;
+    background-color: #000000; /* Changed to black */
+    color: #ffde00; /* Changed to yellow */
     padding: 60px 0 40px;
+    border-top: 2px solid #ffde00; /* Added yellow border */
 }
 
 footer .container {
@@ -492,13 +345,13 @@ footer .container {
 }
 
 .social-link {
-    color: #fff;
+    color: #ffde00; /* Changed to yellow */
     margin-left: 25px;
     transition: color 0.3s ease;
 }
 
 .social-link:hover {
-    color: #972222;
+    color: #ffd000; /* Slightly darker yellow on hover */
 }
 
 /* Responsive design */
