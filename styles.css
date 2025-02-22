@@ -114,7 +114,7 @@ nav ul li a:hover {
     background-color: #eee;
     padding: 120px 0;
     text-align: center;
-    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/api/placeholder/1200/600');
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('aik.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
