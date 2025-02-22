@@ -16,12 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const products = {
         tshirt: {
             name: "Premium T-Shirt",
-            price: 29.99,
+            price: 399,
             image: "/api/placeholder/100/100"
         },
         hoodie: {
             name: "Classic Hoodie",
-            price: 49.99,
+            price: 599,
             image: "/api/placeholder/100/100"
         }
     };
