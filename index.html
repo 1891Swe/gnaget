@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Apparel</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Minimalist Apparel</h1>
+            <nav>
+                <ul>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#cart" id="cart-icon">Cart <span id="cart-count">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Essential Clothing, Exceptional Quality</h2>
+            <p>Minimalist designs for maximum comfort</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/api/placeholder/400/500" alt="Premium T-Shirt">
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium T-Shirt</h3>
+                        <p>Super soft 100% organic cotton t-shirt with minimalist design.</p>
+                        <p class="price">$29.99</p>
+                        <div class="product-options">
+                            <div class="size-selector">
+                                <label for="tshirt-size">Size:</label>
+                                <select id="tshirt-size">
+                                    <option value="s">Small</option>
+                                    <option value="m" selected>Medium</option>
+                                    <option value="l">Large</option>
+                                    <option value="xl">X-Large</option>
+                                </select>
+                            </div>
+                            <div class="color-selector">
+                                <label for="tshirt-color">Color:</label>
+                                <select id="tshirt-color">
+                                    <option value="black">Black</option>
+                                    <option value="white">White</option>
+                                    <option value="gray">Gray</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="btn add-to-cart" data-id="tshirt" data-price="29.99">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/api/placeholder/400/500" alt="Classic Hoodie">
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic Hoodie</h3>
+                        <p>Premium heavyweight cotton blend hoodie with front pocket.</p>
+                        <p class="price">$49.99</p>
+                        <div class="product-options">
+                            <div class="size-selector">
+                                <label for="hoodie-size">Size:</label>
+                                <select id="hoodie-size">
+                                    <option value="s">Small</option>
+                                    <option value="m" selected>Medium</option>
+                                    <option value="l">Large</option>
+                                    <option value="xl">X-Large</option>
+                                </select>
+                            </div>
+                            <div class="color-selector">
+                                <label for="hoodie-color">Color:</label>
+                                <select id="hoodie-color">
+                                    <option value="black">Black</option>
+                                    <option value="navy">Navy</option>
+                                    <option value="gray">Gray</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="btn add-to-cart" data-id="hoodie" data-price="49.99">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Minimalist Apparel was founded with a simple philosophy: create high-quality, timeless clothing that lasts. Our products are ethically made using sustainable materials and manufacturing processes.</p>
+            <p>We believe in quality over quantity, simplicity over complexity, and sustainability over fast fashion.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <div id="cart-total">
+                <p>Total: $<span id="total-amount">0.00</span></p>
+            </div>
+            <button id="checkout-btn" class="btn">Checkout</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Minimalist Apparel. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-link">Instagram</a>
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Facebook</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
